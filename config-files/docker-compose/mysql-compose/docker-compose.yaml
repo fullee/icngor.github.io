@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mysql:
+    image: "percona:5.7.25"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - "./volume/data:/var/lib/mysql"
+      - "./volume/my.cnf.d:/etc/my.cnf.d"
+    ports:
+      - "2000:3306"

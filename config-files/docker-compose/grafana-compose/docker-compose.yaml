@@ -1,0 +1,14 @@
+version: "3.0"
+services:
+  grafana:
+    image: grafana/grafana:7.3.3
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+    - ./volume/data:/var/lib/grafana
+    - ./volume/conf:/usr/share/grafana/conf
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"

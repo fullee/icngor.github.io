@@ -1,0 +1,14 @@
+version: "3.0"
+services:
+  drone:
+    image: gitea/gitea:1.12.5
+    restart: always
+    volumes:
+      - "./data:/data"
+    ports:
+      - "3000:3000"
+      - "2003:22"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
